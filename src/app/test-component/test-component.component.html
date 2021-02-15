@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col">
+        <ng-container *ngIf="!fetchData">
+            <ng-container *ngFor="let item of users ">
+                <div class="row px-5 pt-2">
+                    <div class="col">
+                        <app-user-card [user]="item"></app-user-card>
+                    </div>
+                </div>
+            </ng-container>
+        </ng-container>
+        <ng-container *ngIf="fetchData">
+            <div class="row text-center pt-5">
+                <div class="col">
+                    <app-loading-spinner></app-loading-spinner>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="col">
+        <div class="row px-5 pt-2">
+            <div class="col">
+                <app-license-card></app-license-card>
+            </div>
+        </div>
+    </div>
+</div>
